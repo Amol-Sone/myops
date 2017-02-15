@@ -1,6 +1,6 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
-require('dotenv').config();
+// require('dotenv').config();
 
 // Require keystone
 var keystone = require('keystone');
@@ -21,13 +21,24 @@ keystone.init({
 	'views': ['templates', 'templates/views'],
 	'view engine': 'html',
 	'custom engine': cons.nunjucks,
-
+	'cookie secret': 'secret',
 	'auto update': true,
 	'session': true,
 	'auth': true,
 	'user model': 'User',
 });
+// keystone.set('cloudinary config', { cloud_name: 'myops', api_key: '394617218633297', api_secret: '14KIj5gqGOVKs5gCZZuwGkw7J3g' });
+// or
+keystone.set('cloudinary config', 'cloudinary://394617218633297:14KIj5gqGOVKs5gCZZuwGkw7J3g@myops');
 
+// optional, will prefix all built-in tags with 'keystone_'
+keystone.set('cloudinary prefix', 'keystone');
+
+// optional, will prefix each image public_id with [{prefix}]/{list.path}/{field.path}/
+keystone.set('cloudinary folders', true);
+
+// optional, will force cloudinary to serve images over https
+keystone.set('cloudinary secure', true);
 // Load your project's Models
 keystone.import('models');
 
@@ -36,7 +47,7 @@ keystone.import('models');
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
 	_: require('lodash'),
-	env: keystone.get('env'),
+	// env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable,
 });
