@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "keystone": "^0.3.19",
     "async": "^1.5.0",
-    "lodash": "^4.13.1",
     "consolidate": "^0.14.1",
-    "nunjucks": "^1.0.5", 
+    "dotenv": "^2.0.0",
+    "keystone": "^4.0.0-beta.1",
+    "lodash": "^4.13.1",
     "node-sass": "^3.3.2",
-    "node-sass-middleware": "^0.9.7", 
-    "dotenv": "^2.0.0"
+    "node-sass-middleware": "^0.9.7",
+    "nunjucks": "^1.0.5"
   },
   "devDependencies": {
     "eslint": "^2.12.0",
@@ -20,7 +20,6 @@
     "gulp-shell": "^0.5.0",
     "gulp-watch": "^4.3.5",
     "gulp-sass": "^2.0.4"
-    
   },
   "scripts": {
     "lint": "eslint .",
