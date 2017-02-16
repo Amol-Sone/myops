@@ -37,10 +37,10 @@ module.exports = {
 			ref: "origin/master",
 			repo: "https://github.com/jpagnano/myops.git",
 			path: "/home/opper/www/myops.me",
-			"post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env dev"
+			"post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env dev",
 			env: {
 				NODE_ENV: "dev"
-			}
+			},
 		}
 	}
 }
