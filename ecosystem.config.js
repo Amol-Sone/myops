@@ -40,7 +40,7 @@ module.exports = {
 			"post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env dev"
 			env: {
 				NODE_ENV: "dev"
-			},
+			}
 		}
 	}
 }
