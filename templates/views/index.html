@@ -1,34 +1,38 @@
 {% extends "layouts/default.html" %}
 
 {% block content %}
-	<div class="container">
-		<div class="jumbotron">
-			<img src="/images/logo.svg" width="160">
-			<h1>Welcome</h1>
-			<p>This is your new <a href="http://keystonejs.com" target="_blank">KeystoneJS</a> website.</p>
-			<p>
-				It includes the latest versions of
-				<a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
-				and <a href="http://www.jquery.com/" target="_blank">jQuery</a>.
-			</p>
-			<p>Visit the <a href="http://keystonejs.com/guide" target="_blank">Getting Started</a> guide to learn how to customise it.</p>
-			<hr>
-			{% if user and user.canAccessKeystone %}
-				<p>
-					<a href="/keystone" class="btn btn-lg btn-primary">Open the Admin UI</a>
-				</p>
-			{% else %}
-				<p>We have created a default Admin user for you with the email <strong>ajulian@jpagnano.com</strong> and the password <strong>admin</strong>.</p>
-				<p>
-					<a href="/keystone/signin" style="margin-right: 10px" class="btn btn-lg btn-primary">Sign in</a>
-					to use the Admin UI.
-				</p>
-			{% endif %}
-			<hr>
-			<p>
-				Remember to <a href="https://github.com/keystonejs/keystone" target="_blank">Star KeystoneJS on GitHub</a> and
-				<a href="https://twitter.com/keystonejs" target="_blank">follow @keystonejs</a> on twitter for updates.
-			</p>
+<div class="jumbotron">
+		<div class="container">
+			<h1 class="display-3">Smooth Operations in CSCI 318</h1>
+			<p>A Simple site by Zabbar ______, Shrey ______, Amol, and Adam. 4 Student on the way to mastering Programming Language Concepts</p>
 		</div>
 	</div>
+
+	<div class="container">
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="col-md-4">
+				<h2>LaTeX</h2>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+				<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+			</div>
+			<div class="col-md-4">
+				<h2>Standard ML</h2>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+				<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+		 </div>
+			<div class="col-md-4">
+				<h2>Projects</h2>
+				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+			</div>
+		</div>
+
+		<hr>
+
+		<footer>
+			<p>&copy; Company 2017</p>
+		</footer>
+	</div> <!-- /container -->
+
 {% endblock %}
