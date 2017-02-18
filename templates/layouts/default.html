@@ -13,6 +13,8 @@
 		{# Customise the stylesheet for your site by editing /public/styles/site.sass #}
 		<link href="/styles/site.css" rel="stylesheet">
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
 		{# This file provides the default styling for the KeystoneJS Content Editor #}
 		{% if user and user.canAccessKeystone %}
 			<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
@@ -31,33 +33,27 @@
 		{# Add any other template-specific HEAD tags by extending the head block #}
 		{% block head %}{% endblock %}
 	</head>
-	<body>
+	<body class="bg-inverse text-white">
 
 		{# HEADER #}
-		<div id="header" class="container">
+		<div id="header" class="container-fluid">
 
 			{# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
 			   ... or completely change this header to suit your design. #}
-			<div role="navigation" class="navbar navbar-inverse">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="/">myops</a>
-					</div>
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-left">
-							{% for link in navLinks %}
-								<li class="{{ 'active' if link.key == section else '' }}">
-									<a href="{{ link.href }}">{{ link.label }}</a>
-								</li>
-							{% endfor %}
+			<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand" href="/">myops</a>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						{% for link in navLinks %}
+							<li class="{{ 'nav-item active' if link.key == section else '' }}">
+								<a class="nav-link" href="{{ link.href }}">{{ link.label }}</a>
+							</li>
+						{% endfor %}
 						</ul>
-						<ul class="nav navbar-nav navbar-right">
+						{# <ul class="nav navbar-nav navbar-right">
 							{% if user %}
 								{% if user.canAccessKeystone %}
 								<li><a href="/keystone">Open Keystone</a></li>
@@ -66,10 +62,10 @@
 							{% else %}
 								<li><a href="/keystone/signin">Sign In</a></li>
 							{% endif %}
-						</ul>
-					</div>
+						</ul> #}
 				</div>
-			</div>
+			</nav>
+
 		</div>
 
 		{# BODY #}
@@ -93,20 +89,22 @@
 		{# FOOTER #}
 		<div id="footer" class="container">
 			{# You don"t _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it! #}
-			<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+			<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS &amp; Team Awesome </a>.</p>
 		</div>
 
 
 		{# JAVASCRIPT #}
-
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		{# jQuery 1.11.3 is included by default, and required by both Bootstrap
 			and the KeystoneJS Content Editor. If you are not targeting IE8,
 			you can upgrade to 2.1.4 (also bundled) for better performance. #}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+		{# <script src="/js/jquery/jquery-1.11.3.min.js"></script> #}
 
 		{# Customise which Bootstrap javascript files are served by including
 			them specifically here, instead of bootstrap-3.3.5.min.js #}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+		{# <script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script> #}
 
 		{# The KeystoneJS Content Editor provides support for ks-editable data attributes,
 			which generate links to edit content for users who can access Keystone #}
