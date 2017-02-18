@@ -23,7 +23,7 @@
 								{% for cat in data.post.categories %}<a href="/blog/{{ cat.key }}">{{ cat.name }}</a>{% if loop.index < data.post.categories.length %}, {% endif %}{% endfor %}
 											{% endif %}
 							{% if data.post.author %}
-								by {{ data.post.author.name.first }}
+								by {{ data.post.author.name }}
 							{% endif %}
 						</header>
 						<div class="post">
