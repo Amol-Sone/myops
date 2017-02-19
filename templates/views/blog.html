@@ -29,9 +29,9 @@
 {% endmacro %}
 
 {% block intro %}
-<div class="container">
+<div class="container my-2">
 	{% set title = ( data.category.name if data.category else "Blog" ) %}
-	<h1>{{ title }}</h1>
+	<h1 class="display-3 py-2">{{ title }}</h1>
 </div>
 {% endblock %}
 
