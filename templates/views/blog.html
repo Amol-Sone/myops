@@ -2,9 +2,9 @@
 
 {% macro blogPost(post) %}
 <div class="post" data-ks-editable="editable(user, { list: " Post ", id: post.id })">
-	<h2>
+	<h3>
 		<a href="/blog/post/{{ post.slug }}">{{ post.title }}</a>
-	</h2>
+	</h3>
 	<p class="lead text-muted">Posted
 		{% if post.publishedDate %}
 			on: {{ post._.publishedDate.format("MMMM Do, YYYY") }}
