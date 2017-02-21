@@ -32,6 +32,8 @@
 
 		{# Add any other template-specific HEAD tags by extending the head block #}
 		{% block head %}{% endblock %}
+		<script src="https://use.fontawesome.com/b6d2371c06.js"></script>
+
 	</head>
 	<body class="bg-inverse text-white">
 
@@ -53,6 +55,7 @@
 							</li>
 						{% endfor %}
 						</ul>
+						<a class="btn btn-secondary bg-inverse text-white navbar-right" href="https://github.com/jpagnano/myops/archive/master.zip">Download Source <i class="fa fa-github-square" aria-hidden="true"></i></a>
 						{# <ul class="nav navbar-nav navbar-right">
 							{% if user %}
 								{% if user.canAccessKeystone %}
