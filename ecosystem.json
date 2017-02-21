@@ -2,7 +2,10 @@
   "apps" : [ {
     "name"        : "keystone",
     "script"      : "./keystone.js",
-    "watch"       : true,
+    "watch": "./",
+    "instances": "4",
+    "exec_mode": "cluester",
+    "max_memory_restart": "100M",
     "env": {
       "NODE_ENV": "development"
     },

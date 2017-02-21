@@ -14,7 +14,8 @@ var nunjucks = require('nunjucks');
 keystone.init({
 	'name': 'myops',
 	'brand': 'myops',
-
+	'port': process.env.PORT || 3000,
+	'host': process.env.IP || '127.0.0.1',
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
